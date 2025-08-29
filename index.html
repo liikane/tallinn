@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tere tulemast minu GitHub Page'ile!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      color: #22223b;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s;
+    }
+    h2 {
+      font-weight: 400;
+      color: #4a4e69;
+      animation: fadeInDown 1.3s;
+    }
+    .illus {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+      animation: fadeInUp 2s;
+    }
+    /* Simple SVG illustration animation */
+    .illus svg #sun {
+      transform-origin: 50% 50%;
+      animation: rotateSun 7s linear infinite;
+    }
+    .illus svg #cloud1 {
+      animation: cloudMove 8s ease-in-out infinite alternate;
+    }
+    .illus svg #cloud2 {
+      animation: cloudMove2 10s ease-in-out infinite alternate;
+    }
+    @keyframes rotateSun {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    @keyframes cloudMove {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(30px);}
+    }
+    @keyframes cloudMove2 {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(-25px);}
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    main {
+      max-width: 640px;
+      background: rgba(255,255,255,0.9);
+      margin: 2rem auto;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 6px 32px rgba(122, 125, 170, 0.12);
+      animation: fadeInUp 1.5s;
+    }
+    .btn {
+      display: inline-block;
+      margin: 2rem auto 0 auto;
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+      color: #22223b;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(161,196,253,0.18);
+      transition: background 0.2s, transform 0.2s;
+      animation: fadeInUp 2.2s;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #c2e9fb 0%, #a1c4fd 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    footer {
+      text-align: center;
+      color: #4a4e69;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      opacity: 0.7;
+      animation: fadeInUp 2s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tere tulemast!</h1>
+    <h2>See on näidis GitHub Pages koduleht koos animatsioonide ja illustratsioonidega.</h2>
+    <div class="illus">
+      <!-- Simple SVG illustration with animations -->
+      <svg width="260" height="120" viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="cloud1">
+          <ellipse cx="50" cy="70" rx="32" ry="18" fill="#e0eafc"/>
+          <ellipse cx="76" cy="72" rx="18" ry="14" fill="#cfdef3"/>
+          <ellipse cx="64" cy="62" rx="12" ry="10" fill="#e0eafc"/>
+        </g>
+        <g id="sun">
+          <circle cx="180" cy="50" r="26" fill="#ffe066"/>
+          <!-- Sun rays -->
+          <g stroke="#ffd166" stroke-width="4">
+            <line x1="180" y1="10" x2="180" y2="0"/>
+            <line x1="180" y1="90" x2="180" y2="110"/>
+            <line x1="154" y1="23" x2="140" y2="10"/>
+            <line x1="206" y1="23" x2="220" y2="10"/>
+            <line x1="154" y1="77" x2="140" y2="100"/>
+            <line x1="206" y1="77" x2="220" y2="100"/>
+          </g>
+        </g>
+        <g id="cloud2">
+          <ellipse cx="200" cy="90" rx="20" ry="11" fill="#dde7f3"/>
+          <ellipse cx="218" cy="94" rx="11" ry="7" fill="#c9d6ec"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+  <main>
+    <h2>Kuidas see leht on tehtud?</h2>
+    <ul>
+      <li><strong>HTML5</strong> struktuur.</li>
+      <li><strong>CSS animatsioonid</strong> päises ja SVG-illustratsioonis.</li>
+      <li><strong>SVG-illustratsioon</strong>: päike ja pilved liiguvad ja pöörlevad.</li>
+      <li><strong>Responsiivne kujundus</strong> töötab ka mobiilis.</li>
+    </ul>
+    <p>
+      Soovi korral muuda seda lehte ja lisa oma sisu! Vaata <a href="https://docs.github.com/en/pages">GitHub Pages dokumentatsiooni</a>, et õppida rohkem.
+    </p>
+    <button class="btn" onclick="alert('Jõudu koodi kirjutamisel!')">Proovi nuppu</button>
+  </main>
+  <footer>
+    &copy; 2025 Sinu GitHub Page &mdash; Valmistanud AI abiga.
+  </footer>
+</body>
+</html>
