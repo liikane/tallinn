@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Page](README.md)
+* [WP uudiste lisamise juhend](README.md)
