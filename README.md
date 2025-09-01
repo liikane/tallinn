@@ -5,3 +5,8 @@
 * [ ] Sisesta uudis
 * [ ] Lisa pilt&#x20;
 * [ ] Avalda
+* [ ] Kontrolli üle, kas kõik on õige
+* [ ] Tehtud!
+
+
+ 
