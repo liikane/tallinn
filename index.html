@@ -259,6 +259,97 @@
     }
     .contact p { color: var(--muted); max-width: 760px; margin: 12px auto 24px; line-height: 1.8; }
 
+    .contact-section {
+      padding: 32px 0;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-head h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+    }
+
+    .contact-lead {
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .field span {
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(124, 156, 255, 0.75);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-submit {
+      margin-top: 4px;
+    }
+
+    .form-success,
+    .form-error {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .form-success {
+      background: rgba(57, 191, 124, 0.14);
+      border: 1px solid rgba(57, 191, 124, 0.35);
+      color: #d8ffe9;
+    }
+
+    .form-error {
+      background: rgba(255, 99, 132, 0.14);
+      border: 1px solid rgba(255, 99, 132, 0.35);
+      color: #ffe0e8;
+    }
+
     footer {
       padding: 28px 0 40px;
       color: var(--muted);
@@ -279,6 +370,10 @@
       .hero-grid, .grid-3 { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .section-head { flex-direction: column; align-items: start; }
+    }
+
+    @media (max-width: 720px) {
+      .field-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -427,18 +522,47 @@
       </div>
     </section>
 
-    <section id="kontakt">
-      <div class="contact">
-        <div class="eyebrow" style="justify-content:center; margin: 0 auto; width: fit-content;">
-          <span class="eyebrow-dot" aria-hidden="true"></span>
-          <span>Valmis koostööks</span>
+    <section id="kontakt" class="contact-section">
+      <div class="contact-card">
+        <div class="contact-head">
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span>Kontakt</span>
+          </div>
+          <h2>Kirjuta mulle</h2>
+          <p class="contact-lead">
+            Kui sul on idee, projekt või küsimus, siis täida vorm ja ma võtan sinuga ühendust.
+          </p>
         </div>
-        <h2 style="margin: 18px 0 0; font-size: clamp(1.8rem, 3.5vw, 2.8rem);">Võtame su lehe täna käima.</h2>
-        <p>
-          Kui saadad mulle oma tööde lingid, teen sellest sektsiooni päris portfoolio. Seni on see valmis modernne baas,
-          mida saab kohe kasutada ja vajadusel hiljem täpsustada.
-        </p>
-        <a class="btn btn-primary" href="mailto:liikane@example.com">Kirjuta mulle</a>
+
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdoopjw" method="POST">
+          <div class="field-grid">
+            <label class="field">
+              <span>Sinu nimi</span>
+              <input type="text" name="name" placeholder="Näiteks: Mari Maasikas" required />
+            </label>
+
+            <label class="field">
+              <span>E-post</span>
+              <input type="email" name="email" placeholder="mari@example.com" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Sõnum</span>
+            <textarea name="message" rows="6" placeholder="Kirjuta oma soov või küsimus siia..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary contact-submit">Saada sõnum</button>
+
+          <p id="formSuccess" class="form-success" role="status" aria-live="polite" hidden>
+            Aitäh! Sinu sõnum on saadetud. Vastan sulle esimesel võimalusel.
+          </p>
+
+          <p id="formError" class="form-error" role="alert" aria-live="assertive" hidden>
+            Midagi läks valesti. Palun proovi uuesti või kirjuta mulle otse e-posti teel.
+          </p>
+        </form>
       </div>
     </section>
 
@@ -446,5 +570,33 @@
       &copy; 2026 Liikane. Modernne freelancer one-page veebileht.
     </footer>
   </main>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.hidden = true;
+      errorMsg.hidden = true;
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: 'application/json' }
+        });
+        if (response.ok) {
+          form.reset();
+          successMsg.hidden = false;
+        } else {
+          errorMsg.hidden = false;
+        }
+      } catch (err) {
+        errorMsg.hidden = false;
+      }
+    });
+  </script>
 </body>
 </html>
