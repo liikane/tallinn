@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Modernne freelancer one-page veebileht portfoolio, teenuste ja kontaktiga." />
-  <title>Liikane — Freelancer web</title>
+  <meta name="description" content="Wordpress, Joomla, Drupal ja teised" />
+  <title>Avatud koodiga tarkvara: koolitused, kood, sõnastik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -259,6 +259,97 @@
     }
     .contact p { color: var(--muted); max-width: 760px; margin: 12px auto 24px; line-height: 1.8; }
 
+    .contact-section {
+      padding: 32px 0;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-head h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+    }
+
+    .contact-lead {
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .field span {
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(124, 156, 255, 0.75);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-submit {
+      margin-top: 4px;
+    }
+
+    .form-success,
+    .form-error {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .form-success {
+      background: rgba(57, 191, 124, 0.14);
+      border: 1px solid rgba(57, 191, 124, 0.35);
+      color: #d8ffe9;
+    }
+
+    .form-error {
+      background: rgba(255, 99, 132, 0.14);
+      border: 1px solid rgba(255, 99, 132, 0.35);
+      color: #ffe0e8;
+    }
+
     footer {
       padding: 28px 0 40px;
       color: var(--muted);
@@ -280,6 +371,10 @@
       .nav-links { display: none; }
       .section-head { flex-direction: column; align-items: start; }
     }
+
+    @media (max-width: 720px) {
+      .field-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -287,7 +382,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>Liikane</span>
+        <span>#</span>
       </a>
       <div class="nav-links">
         <a href="#teenused">Teenused</a>
@@ -303,15 +398,14 @@
         <div>
           <div class="eyebrow fade-up">
             <span class="eyebrow-dot" aria-hidden="true"></span>
-            <span>Freelancer web developer • kiiresti, puhtalt, modernselt</span>
+            <span>Wordpress, Joomla, Drupal ja teised veebimootorid</span>
           </div>
-          <h1 class="fade-up delay-1">Tee oma ideest veeb, mis näeb välja kallis.</h1>
+          <h1 class="fade-up delay-1">Kogemus aastast 1993</h1>
           <p class="lead fade-up delay-2">
-            Ma loon kaasaegseid one-page kodulehti ja landing page’e, mis on mobiilisõbralikud,
-            kiired ning fookusega tulemusele — olgu selleks päringud, broneeringud või müük.
+            Avatud koodiga lisad ja juhendid allalaadimiseks. Konsultatsioonid ja koolitused. 
           </p>
           <div class="cta-row fade-up delay-3">
-            <a class="btn btn-primary" href="#kontakt">Alusta projektiga</a>
+            <a class="btn btn-primary" href="#kontakt">Küsi nõu või abi</a>
             <a class="btn btn-secondary" href="#tood">Vaata tehtud töid</a>
           </div>
         </div>
@@ -346,57 +440,23 @@
     <section id="teenused">
       <div class="section-head">
         <h2>Teenused</h2>
-        <p>Kui sul on vaja lihtsat, aga professionaalset veebilehte, siis saan aidata alates struktuurist kuni lõpliku stiilini.</p>
+        <p>Koduleht läks katki? Kiire abi rikkis lehe parandamisel 24/7: tel +372 555 15 285. </p>
       </div>
       <div class="grid-3">
         <article class="card">
-          <h3>One-page kodulehed</h3>
-          <p>Selge ülesehitus, tugev visuaal ja üks konkreetne sõnum. Sobib freelancerile, väikeettevõttele ja teenusepakkujale.</p>
+          <h3>Olemasoleva lehe täiendamine</h3>
+          <p>Enamasti pole vaja kodulehte otsast peale tegema hakata. Tihti piisab olemasoleva lehe auditist, struktuuri korrastamisest ning sisu ning tarkvara värskendamisest.</p>
         </article>
         <article class="card">
-          <h3>Landing page’id</h3>
-          <p>Loodud selleks, et inimesed küsiksid pakkumist, broneeriksid aja või jätaksid oma kontaktid.</p>
+          <h3>Kasutajatugi ja juhendid</h3>
+          <p>Et koduleht toimiks, peab selle sisu täiendama. Selleks tasub töötajateöe tellida koolituse ja/või ülevaatlikud juhendid.</p>
         </article>
         <article class="card">
-          <h3>UI värskendus</h3>
-          <p>Kui sul on olemas vana leht, saan selle teha modernsemaks, puhtamaks ja usaldusväärsemaks.</p>
+          <h3>Uute funktsioonide lisamine</h3>
+          <p>Kaasaegsetel sisuhaldussüsteemidel on modulaarne struktuur. See tähendab, et vajadusel saab vähese aja- ja rahakuluga lisada sellele uusi vajalikke funktsioone. </p>
         </article>
       </div>
     </section>
-
-    <section>
-      <div class="section-head">
-        <h2>Miks see töötab?</h2>
-        <p>Modernne kujundus ei ole ainult ilus — see peab ka juhtima tähelepanu õigesse kohta ja tegema tegevuse lihtsaks.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Kiire</h3>
-          <ul>
-            <li>vähe üleliigset koodi</li>
-            <li>fookus sisul ja CTA-l</li>
-            <li>kiire laadimine</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Usaldusväärne</h3>
-          <ul>
-            <li>selge tekst</li>
-            <li>korralik hierarhia</li>
-            <li>professionaalne mulje</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Responsive</h3>
-          <ul>
-            <li>mobiilis hea lugeda</li>
-            <li>nupud on sõrmele mugavad</li>
-            <li>layout kohaneb ekraaniga</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
     <section id="tood">
       <div class="section-head">
         <h2>Tehtud tööd</h2>
@@ -411,6 +471,8 @@
             <span> · </span>
             <a href="https://www.keeleveeb.ee/dict/speciality/computer/" target="_blank" rel="noopener noreferrer">Keeleveeb</a>
           </div>
+
+          
           <span class="tag">Portfoolio</span>
         </div>
         <div class="work-item">
@@ -430,24 +492,81 @@
       </div>
     </section>
 
-    <section id="kontakt">
-      <div class="contact">
-        <div class="eyebrow" style="justify-content:center; margin: 0 auto; width: fit-content;">
-          <span class="eyebrow-dot" aria-hidden="true"></span>
-          <span>Valmis koostööks</span>
+    <section id="kontakt" class="contact-section">
+      <div class="contact-card">
+        <div class="contact-head">
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span>Kontakt</span>
+          </div>
+          <h2>Kirjuta mulle</h2>
+          <p class="contact-lead">
+            Kui sul on idee, projekt või küsimus, siis täida vorm ja ma võtan sinuga ühendust.
+          </p>
         </div>
-        <h2 style="margin: 18px 0 0; font-size: clamp(1.8rem, 3.5vw, 2.8rem);">Võtame su lehe täna käima.</h2>
-        <p>
-          Kui saadad mulle oma tööde lingid, teen sellest sektsiooni päris portfoolio. Seni on see valmis modernne baas,
-          mida saab kohe kasutada ja vajadusel hiljem täpsustada.
-        </p>
-        <a class="btn btn-primary" href="mailto:liikane@example.com">Kirjuta mulle</a>
+
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdoopjw" method="POST">
+          <div class="field-grid">
+            <label class="field">
+              <span>Sinu nimi</span>
+              <input type="text" name="name" placeholder="Näiteks: Mari Maasikas" required />
+            </label>
+
+            <label class="field">
+              <span>E-post</span>
+              <input type="email" name="email" placeholder="mari@example.com" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Sõnum</span>
+            <textarea name="message" rows="6" placeholder="Kirjuta oma soov või küsimus siia..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary contact-submit">Saada sõnum</button>
+
+          <p id="formSuccess" class="form-success" role="status" aria-live="polite" hidden>
+            Aitäh! Sinu sõnum on saadetud. Vastan sulle esimesel võimalusel.
+          </p>
+
+          <p id="formError" class="form-error" role="alert" aria-live="assertive" hidden>
+            Midagi läks valesti. Palun proovi uuesti või kirjuta mulle otse e-posti teel.
+          </p>
+        </form>
       </div>
     </section>
 
     <footer>
-      &copy; 2026 Liikane. Modernne freelancer one-page veebileht.
+      &copy; 2026 Liikane. 
     </footer>
   </main>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.hidden = true;
+      errorMsg.hidden = true;
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: 'application/json' }
+        });
+        if (response.ok) {
+          form.reset();
+          successMsg.hidden = false;
+        } else {
+          errorMsg.hidden = false;
+        }
+      } catch (err) {
+        errorMsg.hidden = false;
+      }
+    });
+  </script>
 </body>
 </html>
