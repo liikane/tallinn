@@ -1,12 +1,3 @@
-# WP uudiste lisamise juhend
+# Täpsem info
 
-* [ ] Logi sisse WP sisevõrku (Members Area)
-* [ ] Vali uudiste kategooria&#x20;
-* [ ] Sisesta uudis
-* [ ] Lisa pilt&#x20;
-* [ ] Avalda
-* [ ] Kontrolli üle, kas kõik on õige
-* [ ] Tehtud!
-
-
- 
+* [ ] Kontaktid ja muu info on [siin lehel](https://leksiko.eu "WordPressi lehtede hooldamine")
