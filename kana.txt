@@ -6,3 +6,9 @@ Seda faili saab mitmes kohas muuta
 Kana fail on testimiseks 
 
 Toimib
+
+
+VS Code Toimib
+Proovime ka NPP 
+
+NPP on palju kiirem kui VS Code
