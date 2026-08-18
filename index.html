@@ -552,11 +552,37 @@
     const form = document.getElementById('contactForm');
     const successMsg = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
+    const submitBtn = form && form.querySelector('button[type="submit"]');
+
+    if (!form || !successMsg || !errorMsg) {
+      throw new Error('Kontaktivormi elemendid puuduvad: contactForm, formSuccess või formError.');
+    }
+
+    const baseErrorText = errorMsg.textContent.trim();
+
+    const showError = (detail) => {
+      errorMsg.textContent = detail ? baseErrorText + ' (' + detail + ')' : baseErrorText;
+      errorMsg.hidden = false;
+    };
+
+    const responseErrorDetail = async (response) => {
+      try {
+        const payload = await response.json();
+        const errors = Array.isArray(payload.errors) ? payload.errors : [];
+        const messages = errors.map((item) => item.message).filter(Boolean);
+        if (messages.length) return messages.join('; ');
+        if (payload.error) return String(payload.error);
+      } catch (parseErr) {
+        console.error('Kontaktivormi vastuse lugemine ebaõnnestus', parseErr);
+      }
+      return 'HTTP ' + response.status + ' ' + response.statusText;
+    };
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       successMsg.hidden = true;
       errorMsg.hidden = true;
+      if (submitBtn) submitBtn.disabled = true;
       const formData = new FormData(form);
       try {
         const response = await fetch(form.action, {
@@ -568,10 +594,15 @@
           form.reset();
           successMsg.hidden = false;
         } else {
-          errorMsg.hidden = false;
+          const detail = await responseErrorDetail(response);
+          console.error('Kontaktivormi saatmine ebaõnnestus:', detail);
+          showError(detail);
         }
       } catch (err) {
-        errorMsg.hidden = false;
+        console.error('Kontaktivormi saatmine ebaõnnestus', err);
+        showError(err && err.message);
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
   </script>
