@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Wordpress, Joomla, Drupal ja teised" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src https://formspree.io; form-action https://formspree.io" />
   <title>Avatud koodiga tarkvara: koolitused, kood, sõnastik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -479,9 +481,9 @@
           <div>
             <strong>Eestikeelsed Wordpressi ja Githubi juhendid spetsialistile</strong>
             <span>AI abil koostatud ja inimese poolt üle kontrollitud juhendid asjatundjale.</span><br />
-            <a href="https://github.com/liikane/wp-juhendid" target="_blank">Juhendid</a>
+            <a href="https://github.com/liikane/wp-juhendid" target="_blank" rel="noopener noreferrer">Juhendid</a>
             <span> · </span>
-            <a href="https://github.com/liikane/homepage" target="_blank">Markdown süntaksi näidised</a>
+            <a href="https://github.com/liikane/homepage" target="_blank" rel="noopener noreferrer">Markdown süntaksi näidised</a>
           </div>
 
           <span class="tag">Juhendamine</span>
@@ -490,9 +492,9 @@
           <div>
             <strong>Tulemused</strong>
             <span>Mõned värskelt valminud või uuendatud lehed.</span><br />
-			<a href="https://klaaskajak.ee/" target="_blank">Wordpress leht nullist: uudse klaaskajaki pakkumine</a>
+			<a href="https://klaaskajak.ee/" target="_blank" rel="noopener noreferrer">Wordpress leht nullist: uudse klaaskajaki pakkumine</a>
             <span> · </span>
-            <a href="https://www.ubari.ee/" target="_blank">Eksootilise sisuhaldussüsteemi seadistamine koos kliendiga: loodusturism</a>
+            <a href="https://www.ubari.ee/" target="_blank" rel="noopener noreferrer">Eksootilise sisuhaldussüsteemi seadistamine koos kliendiga: loodusturism</a>
           </div>
           <span class="tag">Valmis</span>
         </div>
@@ -516,18 +518,18 @@
           <div class="field-grid">
             <label class="field">
               <span>Sinu nimi</span>
-              <input type="text" name="name" placeholder="Nimi siia" required />
+              <input type="text" name="name" placeholder="Nimi siia" maxlength="100" autocomplete="name" required />
             </label>
 
             <label class="field">
               <span>E-post</span>
-              <input type="email" name="email" placeholder="minu@mail.ee" required />
+              <input type="email" name="email" placeholder="minu@mail.ee" maxlength="254" autocomplete="email" required />
             </label>
           </div>
 
           <label class="field">
             <span>Sõnum</span>
-            <textarea name="message" rows="6" placeholder="Kirjuta oma soov või küsimus siia. Palun ka telefoninumbrit igaks juhuks" required></textarea>
+            <textarea name="message" rows="6" maxlength="5000" placeholder="Kirjuta oma soov või küsimus siia. Palun ka telefoninumbrit igaks juhuks" required></textarea>
           </label>
 
           <button type="submit" class="btn btn-primary contact-submit">Saada sõnum</button>
