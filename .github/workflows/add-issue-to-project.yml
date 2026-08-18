@@ -3,9 +3,14 @@ on:
   issues:
     types: [opened]
 
+permissions: {}
+
 jobs:
   add-to-project:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      repository-projects: write
     steps:
       - name: Add issue to project
         uses: actions/add-to-project@v1
